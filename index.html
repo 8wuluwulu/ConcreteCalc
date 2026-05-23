@@ -1,0 +1,2171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лидер Бетон Групп — Производство и доставка бетона ГОСТ в Костроме</title>
+  <meta name="description" content="Бетонный завод Лидер Бетон Групп. Производство товарного бетона всех марок с доставкой по Костроме и области в день заказа. Точный объем, собственная лаборатория, свой автопарк.">
+  
+  <!-- Premium Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ----------------------------------------------------
+       1. DESIGN SYSTEM & CSS VARIABLES
+       ---------------------------------------------------- */
+    :root {
+      --bg-dark: #0e0f11;
+      --bg-panel: #16171b;
+      --bg-card: #1c1d21;
+      --bg-input: #121315;
+      
+      /* Premium Industrial Accents */
+      --accent-yellow: #e5af28;
+      --accent-orange: #e65f2b;
+      
+      --text-white: #f3f4f6;
+      --text-gray: #9ca3af;
+      --text-dark: #0e0f11;
+      
+      /* Stark Industrial Borders & Elevations */
+      --border-color: #2b2e35;
+      --border-color-hover: #40444f;
+      --border-active: #e5af28;
+      
+      /* Fonts */
+      --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      
+      /* Transitions */
+      --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* ----------------------------------------------------
+       2. GLOBAL RESETS & BASE STYLES
+       ---------------------------------------------------- */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      font-family: var(--font-display);
+      line-height: 1.5;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Hardware Accelerated Overlay Grain */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.012;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4 {
+      color: var(--text-white);
+      font-weight: 800;
+    }
+
+    p {
+      color: var(--text-gray);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-dark);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--border-color-hover);
+    }
+
+    /* ----------------------------------------------------
+       3. NAVIGATION HEADER
+       ---------------------------------------------------- */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(14, 15, 17, 0.8);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+      transition: var(--transition-smooth);
+    }
+
+    header.scrolled {
+      background: rgba(14, 15, 17, 0.95);
+      border-bottom-color: rgba(229, 175, 40, 0.2);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      font-size: 20px;
+      letter-spacing: -0.5px;
+      color: var(--text-white);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .logo svg {
+      color: var(--accent-yellow);
+      transition: transform 0.4s var(--ease-premium);
+    }
+
+    .logo:hover svg {
+      transform: rotate(90deg);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-gray);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: var(--transition-fast);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-yellow);
+      transition: width 0.3s var(--ease-premium);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-white);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Tactical Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: var(--transition-fast);
+      position: relative;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-yellow);
+      color: var(--text-dark);
+      border: 2px solid var(--accent-yellow);
+      box-shadow: 4px 4px 0px var(--border-color);
+    }
+
+    .btn-primary:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px rgba(229, 175, 40, 0.3);
+    }
+
+    .btn-primary:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px rgba(229, 175, 40, 0.3);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text-white);
+      border: 2px solid var(--border-color);
+      box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-white);
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px var(--border-color-hover);
+    }
+
+    .btn-secondary:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--border-color-hover);
+    }
+
+    /* Burger Menu Button (Mobile) */
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--text-white);
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    /* ----------------------------------------------------
+       4. HERO SECTION (Asymmetric, Left-aligned)
+       ---------------------------------------------------- */
+    .hero {
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      padding-top: 120px;
+      padding-bottom: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 28px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      background: rgba(229, 175, 40, 0.08);
+      border: 1px solid rgba(229, 175, 40, 0.2);
+      color: var(--accent-yellow);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-radius: 2px;
+    }
+
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent-yellow);
+      border-radius: 50%;
+      animation: pulse-dot 1.5s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0% { transform: scale(0.8); opacity: 0.5; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(0.8); opacity: 0.5; }
+    }
+
+    .hero-title {
+      font-size: 64px;
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -2.5px;
+      text-transform: uppercase;
+    }
+
+    .hero-title span {
+      color: var(--accent-yellow);
+    }
+
+    .hero-desc {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 580px;
+      color: var(--text-gray);
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 24px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 32px;
+      width: 100%;
+      max-width: 540px;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-num {
+      font-family: var(--font-mono);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--text-white);
+      line-height: 1;
+    }
+
+    .stat-num span {
+      color: var(--accent-yellow);
+    }
+
+    .stat-lbl {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-gray);
+      margin-top: 8px;
+    }
+
+    /* Hero Tech Visual */
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tech-grid-svg {
+      width: 100%;
+      height: 100%;
+      max-width: 440px;
+    }
+
+    .laser-line {
+      animation: laser-scan 4s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    @keyframes laser-scan {
+      0% { transform: translateY(-40px); opacity: 0.3; }
+      50% { transform: translateY(140px); opacity: 1; }
+      100% { transform: translateY(-40px); opacity: 0.3; }
+    }
+
+    .rotating-cube {
+      animation: float-cube 6s ease-in-out infinite;
+      transform-origin: 200px 225px;
+    }
+
+    @keyframes float-cube {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(3deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+
+    /* ----------------------------------------------------
+       5. INTERACTIVE CONCRETE CALCULATOR
+       ---------------------------------------------------- */
+    .calculator-section {
+      padding: 100px 0;
+      background: var(--bg-panel);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+    }
+
+    .section-header {
+      margin-bottom: 64px;
+    }
+
+    .section-title {
+      font-size: 40px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -1.5px;
+    }
+
+    .section-title span {
+      color: var(--accent-yellow);
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .calc-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-label {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-gray);
+    }
+
+    .select-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .select-wrapper::after {
+      content: "";
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid var(--text-gray);
+      pointer-events: none;
+      transition: border-top-color 0.2s var(--ease-premium);
+    }
+
+    .select-wrapper:hover::after {
+      border-top-color: var(--accent-yellow);
+    }
+
+    .input-control {
+      background: var(--bg-input);
+      border: 2px solid var(--border-color);
+      color: var(--text-white);
+      padding: 14px 18px;
+      font-family: var(--font-display);
+      font-size: 15px;
+      border-radius: 4px;
+      transition: var(--transition-fast);
+      width: 100%;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .input-control:focus {
+      border-color: var(--accent-yellow);
+    }
+
+    /* Incremental/Tactile Number Fields */
+    .input-row-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .number-input-wrapper {
+      display: flex;
+      align-items: center;
+      background: var(--bg-input);
+      border: 2px solid var(--border-color);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition-fast);
+    }
+
+    .number-input-wrapper:focus-within {
+      border-color: var(--accent-yellow);
+    }
+
+    .number-input-wrapper .input-control {
+      border: none;
+      text-align: center;
+      padding: 12px 6px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    /* Hide standard numeric arrows */
+    .number-input-wrapper input[type="number"]::-webkit-outer-spin-button,
+    .number-input-wrapper input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .number-input-wrapper input[type="number"] {
+      -moz-appearance: textfield;
+    }
+
+    .num-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-gray);
+      width: 44px;
+      height: 48px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 700;
+      transition: var(--transition-fast);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
+
+    .num-btn:hover {
+      color: var(--accent-yellow);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .num-btn:active {
+      transform: scale(0.9);
+    }
+
+    /* Checkboxes styling */
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      user-select: none;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-white);
+    }
+
+    .checkbox-custom {
+      width: 22px;
+      height: 22px;
+      border: 2px solid var(--border-color);
+      background: var(--bg-input);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-fast);
+      flex-shrink: 0;
+    }
+
+    .checkbox-label input {
+      display: none;
+    }
+
+    .checkbox-label input:checked + .checkbox-custom {
+      background: var(--accent-yellow);
+      border-color: var(--accent-yellow);
+    }
+
+    .checkbox-custom svg {
+      width: 14px;
+      height: 14px;
+      color: var(--text-dark);
+      opacity: 0;
+      transform: scale(0.6);
+      transition: var(--transition-fast);
+    }
+
+    .checkbox-label input:checked + .checkbox-custom svg {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .checkbox-label:hover .checkbox-custom {
+      border-color: var(--accent-yellow);
+    }
+
+    /* Dynamic Distance field */
+    .distance-wrapper {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.4s var(--ease-premium), opacity 0.3s var(--ease-premium), margin 0.3s var(--ease-premium);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .distance-wrapper.show {
+      max-height: 110px;
+      opacity: 1;
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+
+    /* Dynamic Output Panel (Liquid Glass) */
+    .results-panel {
+      background: rgba(22, 23, 27, 0.7);
+      backdrop-filter: blur(20px) saturate(120%);
+      border: 2px solid var(--border-color);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 20px 45px rgba(0, 0, 0, 0.4);
+      padding: 40px;
+      border-radius: 8px;
+      position: sticky;
+      top: 110px;
+      transition: border-color 0.3s var(--ease-premium);
+    }
+
+    .results-panel:hover {
+      border-color: rgba(229, 175, 40, 0.3);
+    }
+
+    .results-title {
+      font-size: 18px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 28px;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 16px;
+      color: var(--text-white);
+    }
+
+    .results-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .results-row:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .results-lbl {
+      color: var(--text-gray);
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+    }
+
+    .results-divider {
+      flex-grow: 1;
+      border-bottom: 1px dashed var(--border-color);
+      margin: 0 12px;
+    }
+
+    .results-val {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--text-white);
+    }
+
+    .results-total {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .total-lbl {
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--accent-yellow);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+    }
+
+    .total-val-box {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .total-num {
+      font-family: var(--font-mono);
+      font-size: 44px;
+      font-weight: 900;
+      color: var(--text-white);
+      line-height: 1;
+    }
+
+    .total-currency {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--accent-yellow);
+    }
+
+    /* ----------------------------------------------------
+       6. BENEFITS (Asymmetric Bento Layout)
+       ---------------------------------------------------- */
+    .benefits-section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .benefits-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 32px;
+    }
+
+    .benefits-grid-left {
+      display: flex;
+    }
+
+    .benefits-grid-right {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* Premium Bento Card */
+    .benefit-card {
+      background: var(--bg-panel);
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 32px;
+      transition: var(--transition-smooth);
+      width: 100%;
+    }
+
+    .benefit-card:hover {
+      border-color: var(--accent-yellow);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Giant Subtle Index Watermark */
+    .benefit-card::before {
+      content: attr(data-index);
+      position: absolute;
+      bottom: -15px;
+      right: 15px;
+      font-family: var(--font-mono);
+      font-size: 120px;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.02);
+      line-height: 1;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .benefit-card:hover::before {
+      color: rgba(229, 175, 40, 0.03);
+    }
+
+    .benefit-visual-wrapper {
+      width: 100%;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      z-index: 2;
+    }
+
+    .benefit-visual-wrapper svg {
+      height: 100%;
+      max-height: 140px;
+      width: auto;
+    }
+
+    .benefit-info {
+      position: relative;
+      z-index: 2;
+    }
+
+    .benefit-title {
+      font-size: 24px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .benefit-title span {
+      color: var(--accent-yellow);
+    }
+
+    .benefit-desc {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-gray);
+      max-width: 90%;
+    }
+
+    /* Interactive Lab Test Card specific style */
+    .live-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      padding: 6px 12px;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 2px;
+      color: #10b981;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .live-indicator-dot {
+      width: 6px;
+      height: 6px;
+      background: #10b981;
+      border-radius: 50%;
+      animation: pulse-dot 1.5s infinite;
+    }
+
+    /* Micro-Animations for Hover Triggering (defined by skill) */
+    .benefit-card:hover .truck-wheel {
+      animation: wheel-spin 1.2s linear infinite;
+    }
+    
+    .benefit-card:hover .truck-drum {
+      animation: drum-rotation 4s linear infinite;
+    }
+
+    @keyframes wheel-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes drum-rotation {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(-360deg); }
+    }
+
+    .truck-wheel {
+      transform-origin: 0px 0px;
+    }
+
+    .truck-drum {
+      transform-origin: 82.5px 60px;
+    }
+
+    .benefit-card:hover #hydraulic-head {
+      transform: translateY(6px);
+    }
+
+    .benefit-card:hover #gauge-needle {
+      transform: rotate(90deg);
+    }
+
+    #hydraulic-head {
+      transition: transform 0.8s var(--ease-premium);
+    }
+
+    #gauge-needle {
+      transform-origin: 100px 70px;
+      transition: transform 0.8s var(--ease-premium);
+    }
+
+    #route-path {
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      transition: stroke-dashoffset 2s var(--ease-premium);
+    }
+
+    .benefit-card:hover #route-path {
+      stroke-dashoffset: 0;
+    }
+
+    .delivery-location-pin {
+      transform-origin: 0px 0px;
+      animation: none;
+    }
+
+    .benefit-card:hover .delivery-location-pin {
+      animation: pin-bounce 1s ease infinite alternate;
+    }
+
+    @keyframes pin-bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-8px); }
+    }
+
+    /* ----------------------------------------------------
+       7. CONTACT FOOTER
+       ---------------------------------------------------- */
+    footer {
+      background: #090a0c;
+      border-top: 1px solid var(--border-color);
+      padding: 80px 0 40px;
+      position: relative;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+      margin-bottom: 64px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .footer-brand .logo {
+      font-size: 24px;
+    }
+
+    .footer-brand p {
+      max-width: 380px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-contacts-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      background: var(--bg-panel);
+      border: 2px solid var(--border-color);
+      padding: 40px;
+      border-radius: 6px;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .contact-label {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-gray);
+    }
+
+    .contact-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-white);
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+
+    a.contact-value:hover {
+      color: var(--accent-yellow);
+    }
+
+    .contact-city {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--text-white);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-color);
+      padding-top: 32px;
+      font-size: 13px;
+      color: var(--text-gray);
+    }
+
+    /* ----------------------------------------------------
+       8. MODAL WINDOWS & LEAD FORMS
+       ---------------------------------------------------- */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 9, 11, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s var(--ease-premium);
+    }
+
+    .modal-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-container {
+      background: var(--bg-panel);
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      width: 90%;
+      max-width: 480px;
+      padding: 40px;
+      position: relative;
+      transform: scale(0.92) translateY(20px);
+      opacity: 0;
+      transition: all 0.4s var(--ease-premium);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 25px 55px rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-overlay.show .modal-container {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: transparent;
+      border: none;
+      color: var(--text-gray);
+      cursor: pointer;
+      font-size: 24px;
+      line-height: 1;
+      padding: 4px;
+      transition: var(--transition-fast);
+    }
+
+    .modal-close:hover {
+      color: var(--text-white);
+    }
+
+    .modal-title {
+      font-size: 24px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      color: var(--text-white);
+    }
+
+    .modal-subtitle {
+      font-size: 14px;
+      color: var(--text-gray);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .modal-summary {
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      padding: 16px 20px;
+      border-radius: 4px;
+      margin-bottom: 28px;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .summary-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .summary-item span {
+      color: var(--text-gray);
+    }
+
+    .summary-item strong {
+      font-family: var(--font-mono);
+      color: var(--text-white);
+    }
+
+    .summary-item strong.highlight {
+      color: var(--accent-yellow);
+    }
+
+    /* Modal Form elements */
+    .modal-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Form Feedback elements */
+    .form-error-msg {
+      display: none;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent-orange);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Success Screens */
+    .success-screen {
+      display: none;
+      text-align: center;
+      padding: 20px 0 10px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .success-icon-box {
+      width: 72px;
+      height: 72px;
+      border: 2px solid var(--accent-yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-yellow);
+      margin-bottom: 28px;
+    }
+
+    .success-title {
+      font-size: 24px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .success-desc {
+      font-size: 15px;
+      color: var(--text-gray);
+      line-height: 1.6;
+      margin-bottom: 32px;
+      max-width: 320px;
+    }
+
+    /* ----------------------------------------------------
+       9. RESPONSIVE BREAKPOINTS (Mobile Override)
+       ---------------------------------------------------- */
+    @media (max-width: 992px) {
+      .hero {
+        padding-top: 140px;
+        min-height: auto;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 56px;
+      }
+
+      .hero-visual {
+        height: 380px;
+      }
+
+      .calc-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .results-panel {
+        position: relative;
+        top: 0;
+        padding: 30px;
+      }
+
+      .benefits-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        height: 70px;
+      }
+
+      .nav-links {
+        display: none; /* Collapsed on mobile */
+      }
+
+      .header-cta .btn {
+        padding: 10px 18px;
+        font-size: 11px;
+      }
+
+      .hero-title {
+        font-size: 46px;
+        letter-spacing: -1.5px;
+      }
+
+      .hero-desc {
+        font-size: 16px;
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 24px;
+      }
+
+      .benefit-card {
+        padding: 32px;
+      }
+
+      .footer-contacts-panel {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 30px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 38px;
+      }
+
+      .hero-ctas {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .hero-ctas .btn {
+        width: 100%;
+      }
+
+      .input-row-3 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .modal-container {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ----------------------------------------------------
+       HEADER
+       ---------------------------------------------------- -->
+  <header id="site-header">
+    <div class="container header-container">
+      <a href="#" class="logo">
+        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4L34 11V29L20 36L6 29V11L20 4Z" stroke="currentColor" stroke-width="3" fill="none"/>
+          <path d="M20 4V36" stroke="currentColor" stroke-width="2"/>
+          <path d="M6 11L20 18L34 11" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <span>Лидер Бетон</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#benefits">Преимущества</a></li>
+          <li><a href="#calculator">Калькулятор</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <button class="btn btn-secondary trigger-callback-modal">Заказать звонок</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ----------------------------------------------------
+       HERO SECTION
+       ---------------------------------------------------- -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Собственное производство
+        </div>
+        <h1 class="hero-title">
+          Производство и<br>доставка бетона <span>ГОСТ</span>
+        </h1>
+        <p class="hero-desc">
+          Надежный поставщик для любых строительных задач. Гарантируем точный объем, лабораторный контроль качества и оперативную доставку в день заказа собственным автотранспортом по Костроме и Костромской области.
+        </p>
+        <div class="hero-ctas">
+          <a href="#calculator" class="btn btn-primary">Рассчитать стоимость</a>
+          <button class="btn btn-secondary trigger-callback-modal">Консультация инженера</button>
+        </div>
+        
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">12<span>+</span></div>
+            <div class="stat-lbl">Лет опыта работы</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">150<span>м³</span></div>
+            <div class="stat-lbl">Производительность в час</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">24<span>/7</span></div>
+            <div class="stat-lbl">Прием и отгрузка заявок</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <!-- Premium Asymmetric Isometric Wireframe Visual -->
+        <svg class="tech-grid-svg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Isometric Grid Background -->
+          <g opacity="0.15" stroke="var(--text-gray)" stroke-width="1">
+            <path d="M200 40 L380 144 L200 248 L20 144 Z" />
+            <path d="M200 120 L380 224 L200 328 L20 224 Z" />
+            <path d="M200 40 V328" />
+            <path d="M20 144 H380" />
+            <path d="M20 224 H380" />
+            <!-- Diagonal grid helper lines -->
+            <path d="M110 92 L290 196" />
+            <path d="M290 92 L110 196" />
+            <path d="M110 172 L290 276" />
+            <path d="M290 172 L110 276" />
+          </g>
+          
+          <!-- Drawing isometric structural slab -->
+          <g class="rotating-cube">
+            <!-- Top Slab Face -->
+            <path d="M200 130 L320 200 L200 270 L80 200 Z" fill="rgba(229, 175, 40, 0.05)" stroke="var(--accent-yellow)" stroke-width="3" />
+            <!-- Left Slab Face -->
+            <path d="M80 200 L200 270 V320 L80 250 Z" fill="rgba(255, 255, 255, 0.03)" stroke="var(--border-color)" stroke-width="2" />
+            <!-- Right Slab Face -->
+            <path d="M200 270 L320 200 V250 L200 320 Z" fill="rgba(255, 255, 255, 0.05)" stroke="var(--border-color)" stroke-width="2" />
+            
+            <!-- Slab Reinforcement Grid inside SVG (Visualizing Concrete Foundation) -->
+            <path d="M110 182.5 L200 235" stroke="rgba(229, 175, 40, 0.4)" stroke-width="2" stroke-dasharray="4 4" />
+            <path d="M140 165 L230 217.5" stroke="rgba(229, 175, 40, 0.4)" stroke-width="2" stroke-dasharray="4 4" />
+            <path d="M170 147.5 L260 200" stroke="rgba(229, 175, 40, 0.4)" stroke-width="2" stroke-dasharray="4 4" />
+            <path d="M200 130 L290 182.5" stroke="rgba(229, 175, 40, 0.4)" stroke-width="2" stroke-dasharray="4 4" />
+            
+            <path d="M140 217.5 L230 165" stroke="rgba(229, 175, 40, 0.4)" stroke-width="2" stroke-dasharray="4 4" />
+            <path d="M170 200 L260 147.5" stroke="rgba(229, 175, 40, 0.4)" stroke-width="2" stroke-dasharray="4 4" />
+            <path d="M200 182.5 L290 130" stroke="rgba(229, 175, 40, 0.4)" stroke-width="2" stroke-dasharray="4 4" />
+          </g>
+
+          <!-- Dim lines -->
+          <g stroke="var(--text-gray)" stroke-width="1" opacity="0.6">
+            <!-- Left Dimension line -->
+            <path d="M60 205 L180 275" />
+            <path d="M60 200 V210" />
+            <path d="M180 270 V280" />
+            <!-- Right Dimension line -->
+            <path d="M340 205 L220 275" />
+            <path d="M340 200 V210" />
+            <path d="M220 270 V280" />
+            <!-- Vertical Thickness Dimension line -->
+            <path d="M335 200 V250" />
+            <path d="M330 200 H340" />
+            <path d="M330 250 H340" />
+          </g>
+
+          <!-- Dimension labels -->
+          <text x="100" y="255" fill="var(--text-gray)" font-family="var(--font-mono)" font-size="10" font-weight="700">L: ДЛИНА</text>
+          <text x="250" y="255" fill="var(--text-gray)" font-family="var(--font-mono)" font-size="10" font-weight="700">W: ШИРИНА</text>
+          <text x="350" y="230" fill="var(--text-gray)" font-family="var(--font-mono)" font-size="10" font-weight="700">H: ТОЛЩИНА</text>
+
+          <!-- Active Technical Laser Scanner line overlay -->
+          <g class="laser-line">
+            <line x1="40" y1="120" x2="360" y2="305" stroke="var(--accent-orange)" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.8" />
+            <circle cx="200" cy="212.5" r="4" fill="var(--accent-orange)" />
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ----------------------------------------------------
+       CONCRETE CALCULATOR SECTION
+       ---------------------------------------------------- -->
+  <section id="calculator" class="calculator-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Калькулятор <span>стоимости</span></h2>
+        <p style="margin-top: 12px; font-size: 16px;">Задайте параметры вашего объекта для мгновенного расчета цены с учетом сопутствующих услуг.</p>
+      </div>
+
+      <div class="calc-grid">
+        <!-- Form inputs -->
+        <div class="calc-inputs">
+          
+          <div class="form-group">
+            <label class="form-label" for="concrete-grade">Марка бетона</label>
+            <div class="select-wrapper">
+              <select id="concrete-grade" class="input-control">
+                <option value="M100">М100 (В7.5) — легкие строительные работы (3 900 ₽/м³)</option>
+                <option value="M150">М150 (В12.5) — стяжки пола, дорожки (4 100 ₽/м³)</option>
+                <option value="M200" selected>М200 (В15) — ленточные фундаменты, плиты (4 300 ₽/м³)</option>
+                <option value="M250">М250 (В20) — несущие конструкции, площадки (4 500 ₽/м³)</option>
+                <option value="M300">М300 (В22.5) — монолитные перекрытия, сваи (4 700 ₽/м³)</option>
+                <option value="M350">М350 (В25) — чаши бассейнов, колонны (5 100 ₽/м³)</option>
+                <option value="M400">М400 (В30) — мостовые конструкции, спецобъекты (5 600 ₽/м³)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Dimensions block -->
+          <div class="input-row-3">
+            <div class="form-group">
+              <label class="form-label">Длина плиты (м)</label>
+              <div class="number-input-wrapper">
+                <button type="button" class="num-btn btn-minus">-</button>
+                <input class="input-control" type="number" id="calc-length" step="0.1" value="10.0" min="0">
+                <button type="button" class="num-btn btn-plus">+</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Ширина плиты (м)</label>
+              <div class="number-input-wrapper">
+                <button type="button" class="num-btn btn-minus">-</button>
+                <input class="input-control" type="number" id="calc-width" step="0.1" value="10.0" min="0">
+                <button type="button" class="num-btn btn-plus">+</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Толщина слоя (м)</label>
+              <div class="number-input-wrapper">
+                <button type="button" class="num-btn btn-minus">-</button>
+                <input class="input-control" type="number" id="calc-thickness" step="0.05" value="0.20" min="0">
+                <button type="button" class="num-btn btn-plus">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Checkboxes block -->
+          <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="calc-delivery" checked>
+              <span class="checkbox-custom">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              Нужна доставка по Костроме / области
+            </label>
+
+            <!-- Distance slide-out field -->
+            <div class="distance-wrapper show" id="distance-group">
+              <div class="form-group">
+                <label class="form-label" for="calc-distance">Расстояние от завода (км)</label>
+                <div class="number-input-wrapper">
+                  <button type="button" class="num-btn btn-minus">-</button>
+                  <input class="input-control" type="number" id="calc-distance" step="5" value="15" min="0" max="150">
+                  <button type="button" class="num-btn btn-plus">+</button>
+                </div>
+              </div>
+            </div>
+
+            <label class="checkbox-label">
+              <input type="checkbox" id="calc-pump">
+              <span class="checkbox-custom">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              Аренда автобетононасоса (смена 7+1 ч)
+            </label>
+          </div>
+
+        </div>
+
+        <!-- Dynamic Results Display Panel -->
+        <div class="results-panel">
+          <h3 class="results-title">Итоговая смета</h3>
+          
+          <div class="results-row">
+            <span class="results-lbl">Требуемый объем</span>
+            <span class="results-divider"></span>
+            <span class="results-val"><span id="out-volume">20.00</span> м³</span>
+          </div>
+
+          <div class="results-row">
+            <span class="results-lbl">Стоимость бетона</span>
+            <span class="results-divider"></span>
+            <span class="results-val"><span id="out-concrete-cost">86 000</span> ₽</span>
+          </div>
+
+          <div class="results-row">
+            <span class="results-lbl">Доставка и услуги</span>
+            <span class="results-divider"></span>
+            <span class="results-val"><span id="out-services-cost">4 750</span> ₽</span>
+          </div>
+
+          <div class="results-total">
+            <div class="total-lbl">Приблизительная сумма к оплате</div>
+            <div class="total-val-box">
+              <span class="total-num" id="out-total-num">90 750</span>
+              <span class="total-currency">₽</span>
+            </div>
+          </div>
+
+          <div class="calc-btn-container">
+            <button class="btn btn-primary" id="order-btn" style="width: 100%; justify-content: center;">Оформить быстрый заказ</button>
+            <p style="text-align: center; margin-top: 14px; font-size: 11px; text-transform: uppercase; font-weight: 700; color: var(--text-gray); letter-spacing: 0.5px;">Расчет является ознакомительным</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ----------------------------------------------------
+       BENEFITS SECTION (Asymmetric Bento 2.0 Grid)
+       ---------------------------------------------------- -->
+  <section id="benefits" class="benefits-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Преимущества <span>завода</span></h2>
+        <p style="margin-top: 12px; font-size: 16px;">Почему застройщики Костромы выбирают продукцию «Лидер Бетон Групп».</p>
+      </div>
+
+      <div class="benefits-layout">
+        <!-- Left wide block: Собственное производство -->
+        <div class="benefits-grid-left">
+          <div class="benefit-card" data-index="01">
+            <div class="live-indicator">
+              <span class="live-indicator-dot"></span>
+              Лаборатория аккредитована
+            </div>
+            
+            <div class="benefit-visual-wrapper">
+              <!-- Inline Lab Press / Quality Schematic SVG -->
+              <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Press Frame -->
+                <path d="M40 120 H160 V130 H40 Z" fill="var(--border-color)" />
+                <path d="M50 120 V20 H60 V120 Z" fill="var(--border-color)" />
+                <path d="M140 120 V20 H150 V120 Z" fill="var(--border-color)" />
+                <path d="M40 10 H160 V20 H40 Z" fill="var(--border-color)" />
+                
+                <!-- Hydraulic Head (Moves down on hover) -->
+                <path id="hydraulic-head" d="M70 25 H130 V45 H70 Z" fill="var(--accent-orange)" />
+                
+                <!-- Concrete Cube under Test -->
+                <path d="M80 85 H120 V120 H80 Z" fill="rgba(255, 255, 255, 0.08)" stroke="var(--text-white)" stroke-width="2" />
+                <!-- Pressure indicators -->
+                <line x1="80" y1="95" x2="120" y2="95" stroke="var(--text-gray)" stroke-width="1" stroke-dasharray="2 2" />
+                <line x1="80" y1="105" x2="120" y2="105" stroke="var(--text-gray)" stroke-width="1" stroke-dasharray="2 2" />
+
+                <!-- Analog Dial Gauge -->
+                <circle cx="100" cy="70" r="20" stroke="var(--border-color)" stroke-width="2" fill="var(--bg-input)" />
+                <!-- Dial divisions -->
+                <path d="M100 53 V57" stroke="var(--text-gray)" stroke-width="1.5" />
+                <path d="M117 70 H113" stroke="var(--text-gray)" stroke-width="1.5" />
+                <path d="M83 70 H87" stroke="var(--text-gray)" stroke-width="1.5" />
+                <!-- Dial Needle (Rotates on hover) -->
+                <line id="gauge-needle" x1="100" y1="70" x2="100" y2="55" stroke="var(--accent-yellow)" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+
+            <div class="benefit-info">
+              <h3 class="benefit-title">Собственное <span>производство</span></h3>
+              <p class="benefit-desc">Контроль качества на каждом этапе. Наша собственная аккредитованная лаборатория ежедневно тестирует сырье и прочность готовых образцов бетона по истечении 28 суток.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right stacked blocks: Быстрая доставка and Умная логистика -->
+        <div class="benefits-grid-right">
+          <!-- Card 2: Быстрая доставка -->
+          <div class="benefit-card" data-index="02">
+            <div class="benefit-visual-wrapper">
+              <!-- Inline Cement Truck SVG -->
+              <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Truck Chassis -->
+                <path d="M20 90 H180 V100 H20 Z" fill="var(--border-color)" />
+                
+                <!-- Truck Cab -->
+                <path d="M135 50 H165 L180 70 V90 H135 Z" fill="var(--border-color-hover)" stroke="var(--border-color)" stroke-width="2" />
+                <path d="M155 55 H165 L173 68 H155 Z" fill="var(--bg-input)" />
+                
+                <!-- Rotating Cement Drum -->
+                <g class="truck-drum">
+                  <path d="M40 50 Q 80 30, 125 50 Q 125 90, 80 90 Q 40 90, 40 50 Z" fill="rgba(229, 175, 40, 0.08)" stroke="var(--accent-yellow)" stroke-width="3" />
+                  <!-- Diagonal drum stripes for rotating visibility -->
+                  <path d="M60 40 L90 85" stroke="var(--accent-yellow)" stroke-width="2" opacity="0.6" />
+                  <path d="M80 35 L110 80" stroke="var(--accent-yellow)" stroke-width="2" opacity="0.6" />
+                  <path d="M100 40 L120 75" stroke="var(--accent-yellow)" stroke-width="2" opacity="0.6" />
+                </g>
+                
+                <!-- Wheels (Spin on card hover) -->
+                <g transform="translate(155, 95)">
+                  <g class="truck-wheel" id="wheel-f">
+                    <circle cx="0" cy="0" r="12" fill="var(--bg-input)" stroke="var(--text-white)" stroke-width="2.5" />
+                    <line x1="-12" y1="0" x2="12" y2="0" stroke="var(--text-white)" stroke-width="1.5" />
+                    <line x1="0" y1="-12" x2="0" y2="12" stroke="var(--text-white)" stroke-width="1.5" />
+                  </g>
+                </g>
+
+                <g transform="translate(85, 95)">
+                  <g class="truck-wheel" id="wheel-b1">
+                    <circle cx="0" cy="0" r="12" fill="var(--bg-input)" stroke="var(--text-white)" stroke-width="2.5" />
+                    <line x1="-12" y1="0" x2="12" y2="0" stroke="var(--text-white)" stroke-width="1.5" />
+                    <line x1="0" y1="-12" x2="0" y2="12" stroke="var(--text-white)" stroke-width="1.5" />
+                  </g>
+                </g>
+
+                <g transform="translate(55, 95)">
+                  <g class="truck-wheel" id="wheel-b2">
+                    <circle cx="0" cy="0" r="12" fill="var(--bg-input)" stroke="var(--text-white)" stroke-width="2.5" />
+                    <line x1="-12" y1="0" x2="12" y2="0" stroke="var(--text-white)" stroke-width="1.5" />
+                    <line x1="0" y1="-12" x2="0" y2="12" stroke="var(--text-white)" stroke-width="1.5" />
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <div class="benefit-info">
+              <h3 class="benefit-title">Быстрая <span>доставка</span></h3>
+              <p class="benefit-desc">Свой автопарк миксеров. Оперативно доставим необходимый объем бетона прямо к месту заливки. Собственная техника обеспечивает минимальные цены на транспортные услуги.</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Умная логистика -->
+          <div class="benefit-card" data-index="03">
+            <div class="benefit-visual-wrapper">
+              <!-- Inline Logical Grid Map & Router SVG -->
+              <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Grid Map Paths (Dotted) -->
+                <path d="M20 20 H180" stroke="rgba(255, 255, 255, 0.05)" stroke-width="2" stroke-dasharray="4 4" />
+                <path d="M20 60 H180" stroke="rgba(255, 255, 255, 0.05)" stroke-width="2" stroke-dasharray="4 4" />
+                <path d="M20 100 H180" stroke="rgba(255, 255, 255, 0.05)" stroke-width="2" stroke-dasharray="4 4" />
+                <path d="M40 10 V110" stroke="rgba(255, 255, 255, 0.05)" stroke-width="2" stroke-dasharray="4 4" />
+                <path d="M100 10 V110" stroke="rgba(255, 255, 255, 0.05)" stroke-width="2" stroke-dasharray="4 4" />
+                <path d="M160 10 V110" stroke="rgba(255, 255, 255, 0.05)" stroke-width="2" stroke-dasharray="4 4" />
+
+                <!-- Active Delivery Path (Solid Route) -->
+                <path id="route-path" d="M40 100 V60 H100 V20 H160" stroke="var(--accent-orange)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                
+                <!-- Start Node (Factory) -->
+                <circle cx="40" cy="100" r="6" fill="var(--bg-panel)" stroke="var(--text-white)" stroke-width="2.5" />
+                <!-- End Node (Construct Site Pin) -->
+                <g transform="translate(160, 20)">
+                  <g class="delivery-location-pin">
+                    <path d="M-6 -16 C-6 -22 6 -22 6 -16 C6 -10 0 0 0 0 C0 0 -6 -10 -6 -16 Z" fill="var(--accent-yellow)" />
+                    <circle cx="0" cy="-16" r="2.5" fill="var(--text-dark)" />
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <div class="benefit-info">
+              <h3 class="benefit-title">Умная <span>логистика</span></h3>
+              <p class="benefit-desc">Интеграция с внутренней CRM-системой. Весь автотранспорт оснащен датчиками ГЛОНАСС, что позволяет контролировать местоположение миксера и время прибытия с точностью до минуты.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ----------------------------------------------------
+       CONTACTS & FOOTER
+       ---------------------------------------------------- -->
+  <footer id="contacts">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 4L34 11V29L20 36L6 29V11L20 4Z" stroke="currentColor" stroke-width="3" fill="none"/>
+              <path d="M20 4V36" stroke="currentColor" stroke-width="2"/>
+              <path d="M6 11L20 18L34 11" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <span>Лидер Бетон</span>
+          </a>
+          <p>Лидер Бетон Групп — производитель сертифицированного товарного бетона с доставкой на строительные площадки Костромы и Костромской области.</p>
+        </div>
+
+        <div class="footer-contacts-panel">
+          <div class="contact-item">
+            <span class="contact-label">Телефон диспетчерской</span>
+            <a href="tel:+74942555019" class="contact-value">+7 (4942) 555-019</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Отдел продаж</span>
+            <a href="mailto:sales@lider-beton.ru" class="contact-value">sales@lider-beton.ru</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Производственный узел</span>
+            <span class="contact-city">г. Кострома, ул. Профсоюзная, д. 42Б</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Режим отгрузок</span>
+            <span class="contact-city" style="color: var(--accent-yellow)">Круглосуточно (24/7)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Лидер Бетон Групп. Все права защищены.</div>
+        <div style="font-family: var(--font-mono); font-size: 11px;">ПРОИЗВОДСТВО БЕТОНА ГОСТ 7473-2010</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ----------------------------------------------------
+       MODAL 1: ORDER CONFIRMATION
+       ---------------------------------------------------- -->
+  <div id="modal-order" class="modal-overlay">
+    <div class="modal-container">
+      <button class="modal-close" data-close>&times;</button>
+      
+      <div class="modal-content-area">
+        <h3 class="modal-title">Оформление заказа</h3>
+        <p class="modal-subtitle">Подтвердите параметры вашей смеси. Мы свяжемся с вами для согласования времени прибытия техники.</p>
+        
+        <div class="modal-summary" id="modal-order-summary">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <form id="order-form" class="modal-form">
+          <input type="hidden" id="hidden-grade" name="grade">
+          <input type="hidden" id="hidden-volume" name="volume">
+          <input type="hidden" id="hidden-total" name="total">
+          
+          <div class="form-group">
+            <label class="form-label" for="order-name">Ваше имя</label>
+            <input class="input-control" type="text" id="order-name" required placeholder="Константин">
+            <span class="form-error-msg" id="order-name-error">Пожалуйста, введите имя</span>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="order-phone">Номер телефона</label>
+            <input class="input-control" type="tel" id="order-phone" required placeholder="+7 (___) ___-____">
+            <span class="form-error-msg" id="order-phone-error">Введите корректный номер телефона</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">Отправить заказ</button>
+        </form>
+      </div>
+
+      <!-- Success Screen -->
+      <div class="success-screen" id="order-success">
+        <div class="success-icon-box">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h3 class="success-title">Заказ принят!</h3>
+        <p class="success-desc">Диспетчер свяжется с вами в течение 5 минут для подтверждения времени доставки и параметров смеси.</p>
+        <button class="btn btn-secondary close-success-btn" style="width: 100%;">Отлично</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ----------------------------------------------------
+       MODAL 2: CALLBACK REQUEST
+       ---------------------------------------------------- -->
+  <div id="modal-callback" class="modal-overlay">
+    <div class="modal-container">
+      <button class="modal-close" data-close>&times;</button>
+      
+      <div class="modal-content-area">
+        <h3 class="modal-title">Заказать звонок</h3>
+        <p class="modal-subtitle">Оставьте ваши контактные данные. Главный технолог производства ответит на все вопросы.</p>
+
+        <form id="callback-form" class="modal-form">
+          <div class="form-group">
+            <label class="form-label" for="callback-name">Ваше имя</label>
+            <input class="input-control" type="text" id="callback-name" required placeholder="Александр">
+            <span class="form-error-msg" id="callback-name-error">Пожалуйста, введите имя</span>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="callback-phone">Номер телефона</label>
+            <input class="input-control" type="tel" id="callback-phone" required placeholder="+7 (___) ___-____">
+            <span class="form-error-msg" id="callback-phone-error">Введите корректный номер телефона</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">Жду звонка</button>
+        </form>
+      </div>
+
+      <!-- Success Screen -->
+      <div class="success-screen" id="callback-success">
+        <div class="success-icon-box">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h3 class="success-title">Спасибо за заявку!</h3>
+        <p class="success-desc">Специалист производственного отдела свяжется с вами по указанному номеру телефона в ближайшее время.</p>
+        <button class="btn btn-secondary close-success-btn" style="width: 100%;">Отлично</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ----------------------------------------------------
+       VANILLA JAVASCRIPT CALCULATOR & LOGIC
+       ---------------------------------------------------- -->
+  <script>
+    // 1. Concrete Grade base prices (₽ per cubic meter)
+    const grades = {
+      'M100': { price: 3900, name: 'Бетон М100 (В7.5)' },
+      'M150': { price: 4100, name: 'Бетон М150 (В12.5)' },
+      'M200': { price: 4300, name: 'Бетон М200 (В15)' },
+      'M250': { price: 4500, name: 'Бетон М250 (В20)' },
+      'M300': { price: 4700, name: 'Бетон М300 (В22.5)' },
+      'M350': { price: 5100, name: 'Бетон М350 (В25)' },
+      'M400': { price: 5600, name: 'Бетон М400 (В30)' }
+    };
+
+    // 2. DOM Elements Selection
+    const gradeSelect = document.getElementById('concrete-grade');
+    const inputLength = document.getElementById('calc-length');
+    const inputWidth = document.getElementById('calc-width');
+    const inputThickness = document.getElementById('calc-thickness');
+    const checkboxDelivery = document.getElementById('calc-delivery');
+    const inputDistance = document.getElementById('calc-distance');
+    const checkboxPump = document.getElementById('calc-pump');
+
+    const outVolume = document.getElementById('out-volume');
+    const outConcreteCost = document.getElementById('out-concrete-cost');
+    const outServicesCost = document.getElementById('out-services-cost');
+    const outTotalCost = document.getElementById('out-total-num');
+    const distanceGroup = document.getElementById('distance-group');
+
+    let currentTotalPrice = 0;
+
+    // 3. Calculator Main Logic
+    function calculate() {
+      const L = Math.max(0, parseFloat(inputLength.value) || 0);
+      const W = Math.max(0, parseFloat(inputWidth.value) || 0);
+      const T = Math.max(0, parseFloat(inputThickness.value) || 0);
+
+      const volume = L * W * T;
+      outVolume.textContent = volume > 0 ? volume.toFixed(2) : '0.00';
+
+      const gradeKey = gradeSelect.value;
+      const gradePrice = grades[gradeKey] ? grades[gradeKey].price : 0;
+      const concreteCost = Math.round(volume * gradePrice);
+      outConcreteCost.textContent = concreteCost > 0 ? concreteCost.toLocaleString('ru-RU') : '0';
+
+      let deliveryCost = 0;
+      if (checkboxDelivery.checked) {
+        distanceGroup.classList.add('show');
+        const dist = Math.max(0, parseFloat(inputDistance.value) || 0);
+        deliveryCost = 2500 + (dist * 150); // flat 2500 base + 150/km
+      } else {
+        distanceGroup.classList.remove('show');
+      }
+
+      let pumpCost = 0;
+      if (checkboxPump.checked) {
+        pumpCost = 12000; // flat pump rental per shift
+      }
+
+      const servicesCost = deliveryCost + pumpCost;
+      outServicesCost.textContent = servicesCost > 0 ? servicesCost.toLocaleString('ru-RU') : '0';
+
+      const totalCost = concreteCost > 0 ? (concreteCost + servicesCost) : 0;
+
+      // Animate total price change (Ticking counter animation for premium feel)
+      if (totalCost !== currentTotalPrice) {
+        animateValue(outTotalCost, currentTotalPrice, totalCost, 400);
+        currentTotalPrice = totalCost;
+      }
+    }
+
+    // 4. Smooth Value Animator
+    function animateValue(element, start, end, duration) {
+      if (start === end) {
+        element.textContent = end.toLocaleString('ru-RU');
+        return;
+      }
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const val = Math.floor(progress * (end - start) + start);
+        element.textContent = val.toLocaleString('ru-RU');
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          element.textContent = end.toLocaleString('ru-RU');
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+
+    // 5. Setup Input Event Listeners
+    [gradeSelect, inputLength, inputWidth, inputThickness, checkboxDelivery, inputDistance, checkboxPump].forEach(element => {
+      if (element) {
+        element.addEventListener('input', calculate);
+        element.addEventListener('change', calculate);
+      }
+    });
+
+    // 6. Setup Tactile Increment/Decrement Buttons logic (Bento Spec)
+    document.querySelectorAll('.number-input-wrapper').forEach(wrapper => {
+      const input = wrapper.querySelector('input[type="number"]');
+      const minusBtn = wrapper.querySelector('.btn-minus');
+      const plusBtn = wrapper.querySelector('.btn-plus');
+      const step = parseFloat(input.getAttribute('step')) || 1;
+
+      minusBtn.addEventListener('click', () => {
+        let val = parseFloat(input.value) || 0;
+        val = Math.max(0, val - step);
+        input.value = step < 1 ? val.toFixed(2) - 0 : val;
+        calculate();
+      });
+
+      plusBtn.addEventListener('click', () => {
+        let val = parseFloat(input.value) || 0;
+        val = val + step;
+        input.value = step < 1 ? val.toFixed(2) - 0 : val;
+        calculate();
+      });
+    });
+
+    // 7. Sticky Header scroll handling
+    const siteHeader = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        siteHeader.classList.add('scrolled');
+      } else {
+        siteHeader.classList.remove('scrolled');
+      }
+    });
+
+    // 8. Modal Trigger & Management Logic
+    const modalOrder = document.getElementById('modal-order');
+    const modalCallback = document.getElementById('modal-callback');
+    const orderBtn = document.getElementById('order-btn');
+    const modalOrderSummary = document.getElementById('modal-order-summary');
+
+    function openModal(modal) {
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      // Reset success / forms states inside this modal
+      modal.querySelector('.modal-content-area').style.display = 'block';
+      modal.querySelector('.success-screen').style.display = 'none';
+      const form = modal.querySelector('form');
+      if (form) form.reset();
+      
+      // Hide error messages
+      modal.querySelectorAll('.form-error-msg').forEach(el => el.style.display = 'none');
+    }
+
+    function closeModal(modal) {
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+
+    // Bind triggers to Open callback modal
+    document.querySelectorAll('.trigger-callback-modal').forEach(btn => {
+      btn.addEventListener('click', () => openModal(modalCallback));
+    });
+
+    // Bind Close events
+    document.querySelectorAll('.modal-overlay, [data-close], .close-success-btn').forEach(element => {
+      element.addEventListener('click', (e) => {
+        if (e.target.hasAttribute('data-close') || e.target.classList.contains('modal-overlay') || e.target.classList.contains('close-success-btn')) {
+          const openModalEl = document.querySelector('.modal-overlay.show');
+          if (openModalEl) closeModal(openModalEl);
+        }
+      });
+    });
+
+    // Bind Order trigger from Calculator
+    orderBtn.addEventListener('click', () => {
+      if (currentTotalPrice <= 0) {
+        return; // Avoid processing zero volume
+      }
+
+      const L = parseFloat(inputLength.value) || 0;
+      const W = parseFloat(inputWidth.value) || 0;
+      const T = parseFloat(inputThickness.value) || 0;
+      const vol = (L * W * T).toFixed(2);
+      
+      const gradeKey = gradeSelect.value;
+      const gradeName = grades[gradeKey] ? grades[gradeKey].name : gradeKey;
+
+      // Build summary box
+      modalOrderSummary.innerHTML = `
+        <div class="summary-item">
+          <span>Смесь</span>
+          <strong>${gradeName}</strong>
+        </div>
+        <div class="summary-item">
+          <span>Объем плиты</span>
+          <strong>${vol} м³</strong>
+        </div>
+        <div class="summary-item">
+          <span>Итог по смете</span>
+          <strong class="highlight">${currentTotalPrice.toLocaleString('ru-RU')} ₽</strong>
+        </div>
+      `;
+
+      // Set hidden inputs for form processing
+      document.getElementById('hidden-grade').value = gradeKey;
+      document.getElementById('hidden-volume').value = vol;
+      document.getElementById('hidden-total').value = currentTotalPrice;
+
+      openModal(modalOrder);
+    });
+
+    // 9. Input Mask & Format Verification for phone fields
+    const phoneInputs = document.querySelectorAll('input[type="tel"]');
+    phoneInputs.forEach(input => {
+      input.addEventListener('input', (e) => {
+        let val = e.target.value.replace(/\D/g, '');
+        // Always starts formatting with 7
+        let formatted = '+7 ';
+        
+        if (val.length > 0) {
+          // If first number entered is 7 or 8, remove it to format cleanly
+          if (val[0] === '7' || val[0] === '8') {
+            val = val.substring(1);
+          }
+          
+          if (val.length > 0) {
+            formatted += '(' + val.substring(0, 3);
+          }
+          if (val.length >= 3) {
+            formatted += ') ' + val.substring(3, 6);
+          }
+          if (val.length >= 6) {
+            formatted += '-' + val.substring(6, 8);
+          }
+          if (val.length >= 8) {
+            formatted += '-' + val.substring(8, 10);
+          }
+        }
+        
+        e.target.value = formatted.trim().substring(0, 18);
+      });
+
+      // Avoid deleting prefix '+7' via backspace
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && (e.target.value === '+7 ' || e.target.value === '+7')) {
+          e.preventDefault();
+        }
+      });
+    });
+
+    // 10. Form submission handling with loading micro-interactions
+    const handleFormSubmit = (form, successScreen) => {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const nameInput = form.querySelector('input[placeholder="Константин"], input[placeholder="Александр"]');
+        const phoneInput = form.querySelector('input[type="tel"]');
+        const errorName = document.getElementById(nameInput.id + '-error');
+        const errorPhone = document.getElementById(phoneInput.id + '-error');
+        
+        // Basic validation
+        let valid = true;
+        if (nameInput.value.trim().length < 2) {
+          errorName.style.display = 'block';
+          valid = false;
+        } else {
+          errorName.style.display = 'none';
+        }
+        
+        if (phoneInput.value.length < 18) {
+          errorPhone.style.display = 'block';
+          valid = false;
+        } else {
+          errorPhone.style.display = 'none';
+        }
+        
+        if (!valid) return;
+
+        // Visual loading transition on the button
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'ОТПРАВКА...';
+        submitBtn.style.opacity = '0.7';
+
+        // Simulate server communication latency
+        setTimeout(() => {
+          // Hide form view & display success panel
+          const contentArea = form.closest('.modal-content-area');
+          contentArea.style.display = 'none';
+          successScreen.style.display = 'flex';
+          
+          // Reset button state
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+          submitBtn.style.opacity = '1';
+        }, 1200);
+      });
+    };
+
+    handleFormSubmit(document.getElementById('order-form'), document.getElementById('order-success'));
+    handleFormSubmit(document.getElementById('callback-form'), document.getElementById('callback-success'));
+
+    // 11. Run calculation on initial load
+    calculate();
+  </script>
+</body>
+</html>
